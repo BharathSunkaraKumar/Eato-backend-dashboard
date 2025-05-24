@@ -23,9 +23,11 @@ function Login({handleShowHello}) {
         setPassword("");
         handleShowHello()
       }
+
       const vendorId = data.vendorId;
-      // console.log(data)
+      console.log(data)
       const vendorResponse = await fetch(`${API_URL}/vendor/single-vendor/${vendorId}`);
+      window.location.reload()
       const vendorData = await vendorResponse.json();
       if(vendorResponse.ok) {
         const vendorFirmId = vendorData.vendorFirmId;
@@ -34,7 +36,6 @@ function Login({handleShowHello}) {
         console.log('check '+vendorFirmId);
         localStorage.setItem('firmId', vendorFirmId);
         localStorage.setItem('firmName', VendorFirmName);
-        window.location.reload()
       }
     }catch(err) {
       console.log(err);

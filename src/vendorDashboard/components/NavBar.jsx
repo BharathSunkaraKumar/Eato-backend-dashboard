@@ -14,11 +14,13 @@ function NavBar({handleShowLogin, handleShowRegister, showLogOut, handleLogOut})
         }
         <div className="userauth">
             {
-              showLogOut ? <span onClick={handleLogOut}>Logout</span> : (
-                <>
-                  <span onClick={handleShowLogin}>Login</span>/
+              !showLogOut ? <>
+                <span onClick={handleShowLogin}>Login</span>/
                   <span onClick={handleShowRegister}>Register</span>
-                </>
+              </>  : (
+                
+                  <span onClick={handleLogOut}>Logout</span>
+                
               )
             }
             

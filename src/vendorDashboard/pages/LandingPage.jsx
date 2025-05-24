@@ -22,24 +22,29 @@ function LandingPage() {
         const loginToken = localStorage.getItem('loginToken');
         if(loginToken) {
             setShowLogOut(true)
+            // setShowHello(true)
         }
     },[])
 
     useEffect(()=> {
         const firmName = localStorage.getItem('firmName');
-        if(firmName) {
+        const firmID = localStorage.getItem('firmId');
+        if(firmName || firmID) {
             setShowFirmForm(false)
+            // showHello(true)
         }
     },[])
     const handleLogOut = () => {
         const confirmLogout = confirm('are you sure to logout?')
-        console.log(confirmLogout)
         if(!confirmLogout) return false
+
         localStorage.removeItem('loginToken');
         localStorage.removeItem('firmId');
         localStorage.removeItem('firmName');
+
         setShowLogOut(false)
         setShowFirmForm(true)
+        // setShowHello(false)
     }
     const handleShowLogin = () => {
         setShowLogin(true)

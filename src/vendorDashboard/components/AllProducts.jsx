@@ -16,7 +16,7 @@ function AllProducts({handleShowproducts}) {
     };
 
     useEffect(()=>{
-        products.length > 0 && productHandler()
+        productHandler()
     },[])
     const deleteById = async(id) => {
         console.log('id', id)
@@ -37,7 +37,7 @@ function AllProducts({handleShowproducts}) {
     <div>
         {/* <h1>AllProducts</h1> */}
         {
-            !products || products.length === 0 ? (<p>No products added</p>) : (
+            !products ? (<p>No products added</p>) : (
                 <table className='product-table'>
                     <thead>
                         <tr>
@@ -64,7 +64,7 @@ function AllProducts({handleShowproducts}) {
                                                     )
                                                 }
                                             </td>
-                                            <td>
+                                            <td className='dltbtn'>
                                                 <button onClick={()=>deleteById(product._id)}>Delete</button>
                                             </td>
                                         </tr> 

@@ -88,6 +88,16 @@ body{
   border-radius: 5px;
   height: 35px;
 }
+/* dltbtn */
+.dltbtn button{
+  background-color: #ff5200;
+  color: #ffff;
+  border: none;
+  outline: none;
+  width: 65px;
+  border-radius: 5px;
+  height: 35px;
+}
 /* button */
 button{
   transition: transform 0.3s ease;
@@ -97,6 +107,9 @@ button{
 button:hover{
   transition: transform 0.3s ease;
   background-color: rgb(12, 123, 235);
+}
+.dltbtn button:hover{
+  background-color: rgb(232, 59, 44);
 }
  /* button:hover{
   transform:scale(1.2);
@@ -190,9 +203,14 @@ button:active{
 /* all products */
 .product-table{
   width: 80vw;
+  
   border-collapse: collapse;
+  margin-left: 20px;
   margin-top: 50px;
 
+}
+.product-table table{
+  width: 100%;
 }
 .product-table th, .product-table td{
   border: 1px solid rgb(89, 94, 99);

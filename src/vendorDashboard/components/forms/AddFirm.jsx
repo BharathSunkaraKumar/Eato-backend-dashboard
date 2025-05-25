@@ -66,7 +66,7 @@ function AddFirm() {
                 setCategory([]);
                 setRegion([]);
                 setOffer('');
-                setFile(null)
+                setImage(null)
             }else if(data.message === 'vendor can have only one firm'){
                 alert("firm exist only 1 firm can be added")
             }else{

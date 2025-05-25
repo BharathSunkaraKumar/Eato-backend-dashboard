@@ -8,7 +8,7 @@ function AddFirm() {
     const [category, setCategory] = useState([]);
     const [region, setRegion] = useState([]);
     const [offer, setOffer] = useState("");
-    const [file, setFile] = useState(null);
+    const [image, setImage] = useState(null)
 
     const handleCategory = (e) => {
         const value = e.target.value;
@@ -28,8 +28,8 @@ function AddFirm() {
         }
     }
     const handleImage = (e) => {
-        const seletcedImage = e.target.files[0];
-        setFile(seletcedImage)
+        const selectedImage = e.target.files[0];
+        setImage(selectedImage)
     }
     const handlefirm = async(e) => {
         e.preventDefault()
@@ -42,7 +42,7 @@ function AddFirm() {
             formData.append('firmName', firmName)
             formData.append('area', area)
             formData.append('offer', offer)
-            formData.append('image', file)
+            formData.append('image', image)
 
             category.forEach((value) => {
                 formData.append('category', value)

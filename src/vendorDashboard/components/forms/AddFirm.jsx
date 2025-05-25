@@ -28,8 +28,8 @@ function AddFirm() {
         }
     }
     const handleImage = (e) => {
-        const setFile = e.target.files[0];
-        setFile(setFile)
+        const seletcedImage = e.target.files[0];
+        setFile(seletcedImage)
     }
     const handlefirm = async(e) => {
         e.preventDefault()
